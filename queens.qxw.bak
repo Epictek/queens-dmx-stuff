@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FIXANDFUNC">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>5.2.1</Version>
+  <Author>Kieran</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <BeatGenerator BeatType="Internal" BPM="120"/>
+   <NetworkServer Type="Native" AutoStart="False" Name="QLC+_C0A80067" Password=""/>
+   <Universe Name="Universe 1" ID="0"/>
+   <Universe Name="Universe 2" ID="1"/>
+   <Universe Name="Universe 3" ID="2"/>
+   <Universe Name="Universe 4" ID="3"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>0</ID>
+   <Name>Par 36 [1]</Name>
+   <Universe>0</Universe>
+   <Address>54</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>1</ID>
+   <Name>Par 36 [2]</Name>
+   <Universe>0</Universe>
+   <Address>61</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>2</ID>
+   <Name>Par 36 [3]</Name>
+   <Universe>0</Universe>
+   <Address>68</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>3</ID>
+   <Name>Par 36 [4]</Name>
+   <Universe>0</Universe>
+   <Address>75</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>5</ID>
+   <Name>Par 36 [6]</Name>
+   <Universe>0</Universe>
+   <Address>89</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>6</ID>
+   <Name>LED Spot Moving Head 100W [7]</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>7</ID>
+   <Name>LED Spot Moving Head 100W [8]</Name>
+   <Universe>0</Universe>
+   <Address>9</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>8</ID>
+   <Name>LED Spot Moving Head 100W [9]</Name>
+   <Universe>0</Universe>
+   <Address>18</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>9</ID>
+   <Name>LED Spot Moving Head 100W [10]</Name>
+   <Universe>0</Universe>
+   <Address>27</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>10</ID>
+   <Name>LED Spot Moving Head 100W [11]</Name>
+   <Universe>0</Universe>
+   <Address>36</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>LED Spot Moving Head 100W</Model>
+   <Mode>9 Channel</Mode>
+   <ID>11</ID>
+   <Name>LED Spot Moving Head 100W [12]</Name>
+   <Universe>0</Universe>
+   <Address>45</Address>
+   <Channels>9</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>ZQ01496 LED PAR LIGHT</Model>
+   <Mode>DMX 8CH</Mode>
+   <ID>12</ID>
+   <Name>ZQ01496 LED PAR LIGHT [13]</Name>
+   <Universe>0</Universe>
+   <Address>96</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <FixtureGroup ID="0">
+   <Name>New group 1</Name>
+   <Size X="6" Y="9"/>
+   <Head X="0" Y="0" Fixture="9">0</Head>
+   <Head X="1" Y="0" Fixture="10">0</Head>
+   <Head X="2" Y="0" Fixture="11">0</Head>
+   <Head X="5" Y="1" Fixture="8">0</Head>
+   <Head X="2" Y="2" Fixture="6">0</Head>
+   <Head X="4" Y="2" Fixture="7">0</Head>
+  </FixtureGroup>
+  <Monitor DisplayMode="0" ShowLabels="0">
+   <Font>Arial,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   <ChannelStyle>0</ChannelStyle>
+   <ValueStyle>0</ValueStyle>
+   <Grid Width="5" Height="5" Depth="6" Units="0" POV="1"/>
+   <StageItem>0</StageItem>
+   <FxItem ID="0" XPos="470.306" YPos="1000" ZPos="5034"/>
+   <FxItem ID="1" XPos="352.547" YPos="1000" ZPos="4208.83"/>
+   <FxItem ID="2" XPos="324.569" YPos="1000" ZPos="3208.39"/>
+   <FxItem ID="3" XPos="309.414" YPos="1000" ZPos="2571.33"/>
+   <FxItem ID="5" XPos="4524.71" YPos="1000" ZPos="3973.71"/>
+   <FxItem ID="6" XPos="444.656" YPos="0" ZPos="1355.35"/>
+   <FxItem ID="7" XPos="4438.01" YPos="0" ZPos="1385.28"/>
+   <FxItem ID="8" XPos="4386.71" YPos="0" ZPos="171.022"/>
+   <FxItem ID="9" XPos="-517.341" YPos="0" ZPos="-534.443"/>
+   <FxItem ID="10" XPos="-517.341" YPos="0" ZPos="-534.443"/>
+   <FxItem ID="11" XPos="-517.341" YPos="0" ZPos="-534.443"/>
+   <FxItem ID="12" XPos="1983.85" YPos="0" ZPos="178.148"/>
+  </Monitor>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="Page 1" ID="0">
+   <Appearance>
+    <Font>Roboto Condensed,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   </Appearance>
+   <WindowState Visible="True" X="0" Y="0" Width="1920" Height="1080"/>
+   <AllowResize>False</AllowResize>
+   <ShowHeader>False</ShowHeader>
+   <ShowEnableButton>True</ShowEnableButton>
+   <Collapsed>False</Collapsed>
+   <Disabled>False</Disabled>
+  </Frame>
+  <Frame Caption="Page 2" ID="1">
+   <Appearance>
+    <Font>Roboto Condensed,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   </Appearance>
+   <WindowState Visible="True" X="0" Y="0" Width="1920" Height="1080"/>
+   <AllowResize>False</AllowResize>
+   <ShowHeader>False</ShowHeader>
+   <ShowEnableButton>True</ShowEnableButton>
+   <Collapsed>False</Collapsed>
+   <Disabled>False</Disabled>
+  </Frame>
+  <Frame Caption="Page 3" ID="2">
+   <Appearance>
+    <Font>Roboto Condensed,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   </Appearance>
+   <WindowState Visible="True" X="0" Y="0" Width="1920" Height="1080"/>
+   <AllowResize>False</AllowResize>
+   <ShowHeader>False</ShowHeader>
+   <ShowEnableButton>True</ShowEnableButton>
+   <Collapsed>False</Collapsed>
+   <Disabled>False</Disabled>
+  </Frame>
+  <Frame Caption="Page 4" ID="3">
+   <Appearance>
+    <Font>Roboto Condensed,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   </Appearance>
+   <WindowState Visible="True" X="0" Y="0" Width="1920" Height="1080"/>
+   <AllowResize>False</AllowResize>
+   <ShowHeader>False</ShowHeader>
+   <ShowEnableButton>True</ShowEnableButton>
+   <Collapsed>False</Collapsed>
+   <Disabled>False</Disabled>
+  </Frame>
+ </VirtualConsole>
+</Workspace>
