@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FIXTURES">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FIXANDFUNC">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>5.2.1</Version>
@@ -29,9 +29,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>0</ID>
-   <Name>Par 36 [1]</Name>
+   <Name>PAR LEFT FRONT</Name>
    <Universe>0</Universe>
-   <Address>58</Address>
+   <Address>201</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -39,9 +39,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>1</ID>
-   <Name>Par 36 [2]</Name>
+   <Name>PAR LEFT BACK</Name>
    <Universe>0</Universe>
-   <Address>51</Address>
+   <Address>101</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -49,9 +49,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>2</ID>
-   <Name>Par 36 [3]</Name>
+   <Name>PAR RIGHT FRONT</Name>
    <Universe>0</Universe>
-   <Address>65</Address>
+   <Address>155</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -59,9 +59,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>5</ID>
-   <Name>Par 36 [6]</Name>
+   <Name>PAR RIGHT BACK</Name>
    <Universe>0</Universe>
-   <Address>44</Address>
+   <Address>137</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -69,7 +69,7 @@
    <Model>LED Spot Moving Head 100W</Model>
    <Mode>11 Channel</Mode>
    <ID>6</ID>
-   <Name>LED Spot Moving Head 100W [7]</Name>
+   <Name>LEFT FRONT</Name>
    <Universe>0</Universe>
    <Address>0</Address>
    <Channels>11</Channels>
@@ -79,7 +79,7 @@
    <Model>LED Spot Moving Head 100W</Model>
    <Mode>11 Channel</Mode>
    <ID>7</ID>
-   <Name>LED Spot Moving Head 100W [8]</Name>
+   <Name>RIGHT FRONT</Name>
    <Universe>0</Universe>
    <Address>22</Address>
    <Channels>11</Channels>
@@ -89,9 +89,9 @@
    <Model>LED Spot Moving Head 100W</Model>
    <Mode>11 Channel</Mode>
    <ID>8</ID>
-   <Name>LED Spot Moving Head 100W [9]</Name>
+   <Name>RIGHT BACK</Name>
    <Universe>0</Universe>
-   <Address>11</Address>
+   <Address>33</Address>
    <Channels>11</Channels>
   </Fixture>
   <Fixture>
@@ -99,9 +99,9 @@
    <Model>LED Spot Moving Head 100W</Model>
    <Mode>11 Channel</Mode>
    <ID>9</ID>
-   <Name>LED Spot Moving Head 100W [10]</Name>
+   <Name>LEFT BACK</Name>
    <Universe>0</Universe>
-   <Address>33</Address>
+   <Address>11</Address>
    <Channels>11</Channels>
   </Fixture>
   <Fixture>
@@ -111,7 +111,7 @@
    <ID>12</ID>
    <Name>ZQ01496 LED PAR LIGHT [13]</Name>
    <Universe>0</Universe>
-   <Address>72</Address>
+   <Address>44</Address>
    <Channels>8</Channels>
   </Fixture>
   <FixtureGroup ID="0">
@@ -129,8 +129,19 @@
    <Head X="1" Y="0" Fixture="2">0</Head>
    <Head X="2" Y="1" Fixture="5">0</Head>
    <Head X="1" Y="2" Fixture="1">0</Head>
-   </FixtureGroup>
-   <Monitor DisplayMode="0" ShowLabels="0">
+  </FixtureGroup>
+  <Function ID="0" Type="Scene" Name="Default">
+   <Speed FadeIn="1000" FadeOut="1000" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
+   <FixtureVal ID="1">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
+   <FixtureVal ID="2">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
+   <FixtureVal ID="5">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
+   <FixtureVal ID="6">0,127,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="7">0,128,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="8">0,128,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="9">0,127,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+  </Function>
+  <Monitor DisplayMode="0" ShowLabels="0">
    <Font>Arial,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
    <ChannelStyle>0</ChannelStyle>
    <ValueStyle>0</ValueStyle>
@@ -146,5 +157,27 @@
    <FxItem ID="9" XPos="506.644" YPos="1500" ZPos="622.3"/>
    <FxItem ID="12" XPos="2290.38" YPos="1500" ZPos="178.148" XRot="-90"/>
   </Monitor>
-  </Engine>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="Main" ID="0">
+   <Appearance>
+    <Font>Roboto Condensed,16,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
+   </Appearance>
+   <WindowState Visible="True" X="0" Y="0" Width="1920" Height="1080"/>
+   <AllowResize>False</AllowResize>
+   <ShowHeader>False</ShowHeader>
+   <ShowEnableButton>True</ShowEnableButton>
+   <Collapsed>False</Collapsed>
+   <Disabled>False</Disabled>
+   <Button Caption="Default" ID="0">
+    <WindowState Visible="True" X="20" Y="20" Width="150" Height="80"/>
+    <Appearance>
+     <BackgroundColor>4294967040</BackgroundColor>
+     <Font>Roboto Condensed,14,-1,5,700,0,0,0,0,0,0,0,0,0,0,1</Font>
+    </Appearance>
+    <Function ID="0"/>
+    <Action>Toggle</Action>
+   </Button>
+  </Frame>
+ </VirtualConsole>
 </Workspace>
