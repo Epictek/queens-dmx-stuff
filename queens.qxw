@@ -3,7 +3,7 @@
 <Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FIXANDFUNC">
  <Creator>
   <Name>Q Light Controller Plus</Name>
-  <Version>5.2.1</Version>
+  <Version>5.2.2</Version>
   <Author>Kieran</Author>
  </Creator>
  <Engine>
@@ -11,15 +11,17 @@
    <BeatGenerator BeatType="Disabled" BPM="120"/>
    <NetworkServer Type="Native" AutoStart="False" Name="QLC+_C0A80067" Password=""/>
    <Universe Name="Universe 1" ID="0">
-    <Output Plugin="ArtNet" UID="192.168.0.131" Line="2"/>
+    <Output Plugin="ArtNet" Name="192.168.1.118" UID="" Line="2">
+     <PluginParameters UniverseChannels="207"/>
+    </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1"/>
    <Universe Name="Universe 3" ID="2"/>
    <Universe Name="Universe 4" ID="3">
-    <Input Plugin="MIDI" UID="input" Line="1" Profile="Akai APC Mini mk2">
+    <Input Plugin="MIDI" Name="input" UID="36864" Line="1" Profile="Akai APC Mini mk2">
      <PluginParameters initmessage="APC mini mk2 Ableton mode 2"/>
     </Input>
-    <Feedback Plugin="MIDI" UID="input" Line="1">
+    <Feedback Plugin="MIDI" Name="input" UID="36864" Line="1">
      <PluginParameters initmessage="APC mini mk2 Ableton mode 2"/>
     </Feedback>
    </Universe>
@@ -29,9 +31,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>0</ID>
-   <Name>PAR LEFT FRONT</Name>
+   <Name>PAR LEFT 4</Name>
    <Universe>0</Universe>
-   <Address>201</Address>
+   <Address>65</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -39,9 +41,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>1</ID>
-   <Name>PAR LEFT BACK</Name>
+   <Name>PAR LEFT 3</Name>
    <Universe>0</Universe>
-   <Address>101</Address>
+   <Address>58</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -49,9 +51,29 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>2</ID>
-   <Name>PAR RIGHT FRONT</Name>
+   <Name>PAR RIGHT 2</Name>
    <Universe>0</Universe>
-   <Address>155</Address>
+   <Address>79</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>3</ID>
+   <Name>PAR LEFT  2</Name>
+   <Universe>0</Universe>
+   <Address>51</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>4</ID>
+   <Name>PAR LEFT 1</Name>
+   <Universe>0</Universe>
+   <Address>44</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -59,9 +81,9 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>5</ID>
-   <Name>PAR RIGHT BACK</Name>
+   <Name>PAR RIGHT 1</Name>
    <Universe>0</Universe>
-   <Address>137</Address>
+   <Address>72</Address>
    <Channels>7</Channels>
   </Fixture>
   <Fixture>
@@ -83,6 +105,7 @@
    <Universe>0</Universe>
    <Address>22</Address>
    <Channels>11</Channels>
+   <Modifier Channel="0" Name="Invert"/>
   </Fixture>
   <Fixture>
    <Manufacturer>UKing</Manufacturer>
@@ -93,6 +116,7 @@
    <Universe>0</Universe>
    <Address>33</Address>
    <Channels>11</Channels>
+   <Modifier Channel="0" Name="Invert"/>
   </Fixture>
   <Fixture>
    <Manufacturer>UKing</Manufacturer>
@@ -105,13 +129,33 @@
    <Channels>11</Channels>
   </Fixture>
   <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>12-LED 6-in-1 Battery Wall Washer</Model>
+   <Mode>10 Channel</Mode>
+   <ID>10</ID>
+   <Name>12-LED 6-in-1 Battery Wall Washer [11]</Name>
+   <Universe>0</Universe>
+   <Address>86</Address>
+   <Channels>10</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Generic</Manufacturer>
+   <Model>12-LED 6-in-1 Battery Wall Washer</Model>
+   <Mode>10 Channel</Mode>
+   <ID>11</ID>
+   <Name>12-LED 6-in-1 Battery Wall Washer [12]</Name>
+   <Universe>0</Universe>
+   <Address>96</Address>
+   <Channels>10</Channels>
+  </Fixture>
+  <Fixture>
    <Manufacturer>UKing</Manufacturer>
    <Model>ZQ01496 LED PAR LIGHT</Model>
    <Mode>DMX 8CH</Mode>
    <ID>12</ID>
    <Name>ZQ01496 LED PAR LIGHT [13]</Name>
    <Universe>0</Universe>
-   <Address>44</Address>
+   <Address>106</Address>
    <Channels>8</Channels>
   </Fixture>
   <FixtureGroup ID="0">
@@ -137,9 +181,9 @@
    <FixtureVal ID="2">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
    <FixtureVal ID="5">0,255,1,255,2,255,3,255,4,0,5,0,6,0</FixtureVal>
    <FixtureVal ID="6">0,127,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
-   <FixtureVal ID="7">0,128,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
-   <FixtureVal ID="8">0,128,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
-   <FixtureVal ID="9">0,127,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="7">0,196,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="8">0,216,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
+   <FixtureVal ID="9">0,129,1,0,2,49,3,0,4,45,5,0,6,0,7,255</FixtureVal>
   </Function>
   <Monitor DisplayMode="0" ShowLabels="0">
    <Font>Arial,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1</Font>
@@ -148,14 +192,18 @@
    <Grid Width="5" Height="5" Depth="6" Units="0" POV="1"/>
    <StageItem>0</StageItem>
    <FxItem ID="0" XPos="255.44" YPos="1500" ZPos="2771.38"/>
-   <FxItem ID="1" XPos="255.44" YPos="1500" ZPos="4345.06"/>
+   <FxItem ID="1" XPos="255.44" YPos="1500" ZPos="3348.84"/>
    <FxItem ID="2" XPos="4656.07" YPos="1500" ZPos="2771.38"/>
-   <FxItem ID="5" XPos="4656.07" YPos="1500" ZPos="4345.06"/>
+   <FxItem ID="3" XPos="255.44" YPos="1000" ZPos="4041.62"/>
+   <FxItem ID="4" XPos="255.44" YPos="1000" ZPos="4522.7"/>
+   <FxItem ID="5" XPos="4656.07" YPos="1500" ZPos="3795.86"/>
    <FxItem ID="6" XPos="506.644" YPos="1500" ZPos="1500.1"/>
-   <FxItem ID="7" XPos="4438.01" YPos="1500" ZPos="1385.28"/>
-   <FxItem ID="8" XPos="4438.01" YPos="1500" ZPos="622.3"/>
+   <FxItem ID="7" InvertedPan="True" XPos="4438.01" YPos="1500" ZPos="1385.28"/>
+   <FxItem ID="8" InvertedPan="True" XPos="4438.01" YPos="1500" ZPos="622.3"/>
    <FxItem ID="9" XPos="506.644" YPos="1500" ZPos="622.3"/>
-   <FxItem ID="12" XPos="2290.38" YPos="1500" ZPos="178.148" XRot="-90"/>
+   <FxItem ID="10" XPos="1362.9" YPos="1000" ZPos="180.931"/>
+   <FxItem ID="11" XPos="3387.22" YPos="1000" ZPos="207.655"/>
+   <FxItem ID="12" XPos="2290.38" YPos="1470" ZPos="178.148" XRot="-90"/>
   </Monitor>
  </Engine>
  <VirtualConsole>
@@ -169,15 +217,6 @@
    <ShowEnableButton>True</ShowEnableButton>
    <Collapsed>False</Collapsed>
    <Disabled>False</Disabled>
-   <Button Caption="Default" ID="0">
-    <WindowState Visible="True" X="20" Y="20" Width="150" Height="80"/>
-    <Appearance>
-     <BackgroundColor>4294967040</BackgroundColor>
-     <Font>Roboto Condensed,14,-1,5,700,0,0,0,0,0,0,0,0,0,0,1</Font>
-    </Appearance>
-    <Function ID="0"/>
-    <Action>Toggle</Action>
-   </Button>
   </Frame>
  </VirtualConsole>
 </Workspace>
