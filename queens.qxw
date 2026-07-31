@@ -6,7 +6,7 @@
   <Version>5.2.2</Version>
   <Author>Kieran</Author>
  </Creator>
- <Engine>
+ <Engine StartupFunction="10">
   <InputOutputMap>
    <BeatGenerator BeatType="Disabled" BPM="120"/>
    <NetworkServer Type="Native" AutoStart="False" Name="QLC+_C0A80067" Password=""/>
@@ -577,10 +577,10 @@
   </Function>
   <Function ID="43" Type="Scene" Name="POS CROWD">
    <Speed FadeIn="1200" FadeOut="1200" Duration="0"/>
-   <FixtureVal ID="6">0,127,1,0,2,25,3,0</FixtureVal>
-   <FixtureVal ID="7">0,196,1,0,2,25,3,0</FixtureVal>
-   <FixtureVal ID="8">0,216,1,0,2,25,3,0</FixtureVal>
-   <FixtureVal ID="9">0,129,1,0,2,25,3,0</FixtureVal>
+   <FixtureVal ID="6">0,127,1,0,2,70,3,0</FixtureVal>
+   <FixtureVal ID="7">0,196,1,0,2,70,3,0</FixtureVal>
+   <FixtureVal ID="8">0,216,1,0,2,70,3,0</FixtureVal>
+   <FixtureVal ID="9">0,129,1,0,2,70,3,0</FixtureVal>
   </Function>
   <Function ID="44" Type="EFX" Name="CROWD SWEEP">
    <Fixture>
@@ -627,7 +627,7 @@
     <Phase>90</Phase>
    </Axis>
    <Axis Name="Y">
-    <Offset>30</Offset>
+    <Offset>70</Offset>
     <Frequency>3</Frequency>
     <Phase>270</Phase>
    </Axis>
