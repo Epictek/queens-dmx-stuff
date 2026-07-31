@@ -577,10 +577,10 @@
   </Function>
   <Function ID="43" Type="Scene" Name="POS CROWD">
    <Speed FadeIn="1200" FadeOut="1200" Duration="0"/>
-   <FixtureVal ID="6">0,127,1,0,2,40,3,0</FixtureVal>
-   <FixtureVal ID="7">0,196,1,0,2,40,3,0</FixtureVal>
-   <FixtureVal ID="8">0,216,1,0,2,40,3,0</FixtureVal>
-   <FixtureVal ID="9">0,129,1,0,2,40,3,0</FixtureVal>
+   <FixtureVal ID="6">0,67,1,0,2,40,3,0</FixtureVal>
+   <FixtureVal ID="7">0,136,1,0,2,40,3,0</FixtureVal>
+   <FixtureVal ID="8">0,156,1,0,2,40,3,0</FixtureVal>
+   <FixtureVal ID="9">0,69,1,0,2,40,3,0</FixtureVal>
   </Function>
   <Function ID="44" Type="EFX" Name="CROWD SWEEP">
    <Fixture>
@@ -622,7 +622,7 @@
    <StartOffset>0</StartOffset>
    <IsRelative>0</IsRelative>
    <Axis Name="X">
-    <Offset>127</Offset>
+    <Offset>100</Offset>
     <Frequency>2</Frequency>
     <Phase>90</Phase>
    </Axis>
