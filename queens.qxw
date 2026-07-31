@@ -790,7 +790,7 @@
     <Slider Caption="PARS" ID="32" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="16" Y="32" Width="88" Height="368"/>
      <Input ID="0" Universe="3" Channel="48"/>
-     <SliderMode ValueDisplayStyle="Percentage">Level</SliderMode>
+     <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="0">0</Channel>
       <Channel Fixture="1">0</Channel>
@@ -799,34 +799,46 @@
       <Channel Fixture="4">0</Channel>
       <Channel Fixture="5">0</Channel>
      </Level>
+     <Reset>
+      <Input ID="1" Universe="3" Channel="128"/>
+     </Reset>
     </Slider>
     <Slider Caption="MOVERS" ID="33" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="124" Y="32" Width="88" Height="368"/>
      <Input ID="0" Universe="3" Channel="49"/>
-     <SliderMode ValueDisplayStyle="Percentage">Level</SliderMode>
+     <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="6">7</Channel>
       <Channel Fixture="7">7</Channel>
       <Channel Fixture="8">7</Channel>
       <Channel Fixture="9">7</Channel>
      </Level>
+     <Reset>
+      <Input ID="1" Universe="3" Channel="129"/>
+     </Reset>
     </Slider>
     <Slider Caption="WASHERS" ID="34" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="232" Y="32" Width="88" Height="368"/>
      <Input ID="0" Universe="3" Channel="50"/>
-     <SliderMode ValueDisplayStyle="Percentage">Level</SliderMode>
+     <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="10">0</Channel>
       <Channel Fixture="11">0</Channel>
      </Level>
+     <Reset>
+      <Input ID="1" Universe="3" Channel="130"/>
+     </Reset>
     </Slider>
     <Slider Caption="BLINDER" ID="35" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="340" Y="32" Width="88" Height="368"/>
      <Input ID="0" Universe="3" Channel="51"/>
-     <SliderMode ValueDisplayStyle="Percentage">Level</SliderMode>
+     <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="12">0</Channel>
      </Level>
+     <Reset>
+      <Input ID="1" Universe="3" Channel="131"/>
+     </Reset>
     </Slider>
     <Slider Caption="MASTER" ID="36" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="448" Y="32" Width="88" Height="368"/>
