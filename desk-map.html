@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMX Operator 384 &rarr; QLC+ Map</title>
+<style>
+  :root {
+    --bg: #141518;
+    --desk: #1e2025;
+    --desk-edge: #2c2f36;
+    --text: #e8e9eb;
+    --dim: #8a8d94;
+    --levels: #3b82f6;
+    --movement: #a855f7;
+    --fx: #f97316;
+    --position: #22c55e;
+    --looks: #ef4444;
+    --jam: #eab308;
+    --unused: #3a3d44;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Roboto Condensed", "Segoe UI", system-ui, sans-serif;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  h1 { font-size: 1.6rem; letter-spacing: 0.05em; }
+  .sub { color: var(--dim); font-size: 0.9rem; margin-top: 4px; text-align: center; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+  .desk {
+    background: var(--desk);
+    border: 2px solid var(--desk-edge);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    max-width: 1200px;
+    width: 100%;
+  }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .row { display: grid; gap: 10px; }
+  .row.c12 { grid-template-columns: repeat(12, 1fr); }
+  .row.c8  { grid-template-columns: repeat(8, 1fr); }
+
+  .btn, .fader-wrap {
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    background: #26282e;
+    border: 1px solid #33363d;
+    border-top: 3px solid var(--c, var(--unused));
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 74px;
+    justify-content: center;
+  }
+  .btn .num, .fader-wrap .num {
+    font-size: 0.7rem;
+    color: var(--dim);
+    letter-spacing: 0.1em;
+  }
+  .btn .label, .fader-wrap .label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+  .btn .label:empty::before, .fader-wrap .label:empty::before {
+    content: "\2014";
+    color: var(--dim);
+    font-weight: 400;
+  }
+  .btn.used, .fader-wrap.used { background: #2a2d34; }
+
+  .fader-track {
+    height: 34px;
+    width: 8px;
+    margin: 2px auto;
+    background: #101114;
+    border-radius: 4px;
+    position: relative;
+  }
+  .fader-cap {
+    position: absolute;
+    left: -6px;
+    width: 20px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--c, var(--unused));
+    bottom: 30%;
+  }
+  .bank-note { color: var(--dim); font-size: 0.8rem; margin-top: 6px; }
+
+  footer { color: var(--dim); font-size: 0.8rem; text-align: center; line-height: 1.6; max-width: 800px; }
+</style>
+</head>
+<body>
+
+<header style="text-align:center">
+  <h1>ADJ DMX Operator 384 &rarr; QLC+ Virtual Console</h1>
+  <div class="sub">MIDI controller mode &middot; Channel 1 &middot; Page 1 (do not change pages with Bank Up/Down)</div>
+</header>
+
+<div class="legend">
+  <span><i class="dot" style="background:var(--levels)"></i>LEVELS</span>
+  <span><i class="dot" style="background:var(--movement)"></i>MOVEMENT</span>
+  <span><i class="dot" style="background:var(--fx)"></i>FX</span>
+  <span><i class="dot" style="background:var(--position)"></i>POSITION</span>
+  <span><i class="dot" style="background:var(--looks)"></i>LOOKS</span>
+  <span><i class="dot" style="background:var(--jam)"></i>JAM</span>
+  <span><i class="dot" style="background:var(--unused)"></i>Unmapped</span>
+</div>
+
+<div class="desk">
+
+  <section>
+    <div class="section-label">Fixture buttons (Notes 20&ndash;31)</div>
+    <div class="row c12">
+      <div class="btn used" style="--c:var(--position)"><span class="num">FIX 1</span><span class="label">FRONT SPOT</span></div>
+      <div class="btn used" style="--c:var(--position)"><span class="num">FIX 2</span><span class="label">WIDE BAND</span></div>
+      <div class="btn used" style="--c:var(--position)"><span class="num">FIX 3</span><span class="label">BACKLINE</span></div>
+      <div class="btn used" style="--c:var(--position)"><span class="num">FIX 4</span><span class="label">CROWD</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 5</span><span class="label">STRAWBERRY</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 6</span><span class="label">RASPBERRY</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 7</span><span class="label">GRAPE JELLY</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 8</span><span class="label">PLUM</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 9</span><span class="label">JAM MIX</span></div>
+      <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 10</span><span class="label">JAM CHASE</span></div>
+       <div class="btn used" style="--c:var(--jam)"><span class="num">FIX 11</span><span class="label">JAM SWAP</span></div>
+      <div class="btn"><span class="num">FIX 12</span><span class="label"></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Faders (CC 0&ndash;7 &middot; bank 2 = CC 8&ndash;15 unmapped)</div>
+    <div class="row c8">
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 1</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">PARS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 2</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">MOVERS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 3</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">WASHERS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 4</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">BLINDER</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 5</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">MASTER</span></div>
+      <div class="fader-wrap used" style="--c:var(--fx)"><span class="num">FADER 6</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">SPEED</span></div>
+      <div class="fader-wrap"><span class="num">FADER 7</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label"></span></div>
+      <div class="fader-wrap"><span class="num">FADER 8</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label"></span></div>
+    </div>
+    <div class="bank-note">Fade Time slider sends Program Change &mdash; not usable in QLC+.</div>
+  </section>
+
+  <section>
+    <div class="section-label">Scene buttons (Notes 12&ndash;19)</div>
+    <div class="row c8">
+      <div class="btn used" style="--c:var(--movement)"><span class="num">SCN 1</span><span class="label">SLOW CIRCLE</span></div>
+      <div class="btn used" style="--c:var(--movement)"><span class="num">SCN 2</span><span class="label">SWEEP</span></div>
+      <div class="btn used" style="--c:var(--movement)"><span class="num">SCN 3</span><span class="label">PARTY CIRCLE</span></div>
+      <div class="btn used" style="--c:var(--movement)"><span class="num">SCN 4</span><span class="label">CROWD SWEEP</span></div>
+      <div class="btn used" style="--c:var(--fx)"><span class="num">SCN 5</span><span class="label">COLOUR CHASE</span></div>
+      <div class="btn used" style="--c:var(--fx)"><span class="num">SCN 6</span><span class="label">STROBE</span></div>
+      <div class="btn used" style="--c:var(--fx)"><span class="num">SCN 7</span><span class="label">UV WASH</span></div>
+      <div class="btn used" style="--c:var(--fx)"><span class="num">SCN 8</span><span class="label">SPEED TAP</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Chase buttons (Notes 0&ndash;11)</div>
+    <div class="row c12">
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 1</span><span class="label">BLACKOUT</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 2</span><span class="label">HOUSE</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 3</span><span class="label">CHANGE&shy;OVER</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 4</span><span class="label">MC / HOST</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 5</span><span class="label">PARTY</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 6</span><span class="label">ROCK</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 7</span><span class="label">ACOUSTIC</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 8</span><span class="label">COLOUR CHILL</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 9</span><span class="label">PURPLE HAZE</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 10</span><span class="label">OCEAN</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 11</span><span class="label">SUNSET</span></div>
+      <div class="btn used" style="--c:var(--looks)"><span class="num">CHS 12</span><span class="label">WHITE OUT</span></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  APC mini mk2 remains fully mapped in parallel &mdash; both controllers drive the same widgets.<br>
+  LOOKS buttons not on the desk (APC only): BLINDER, ENCORE, WALKOUT, BLINDER STROBE.<br>
+  No LED feedback on the 384; QLC+ cannot light the desk&rsquo;s buttons.
+</footer>
+
+</body>
+</html>

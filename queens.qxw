@@ -16,7 +16,9 @@
     </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1"/>
-   <Universe Name="Universe 3" ID="2"/>
+   <Universe Name="Universe 3" ID="2">
+    <Input Plugin="MIDI" Name="input" UID="36864" Line="0" Profile="DMX Operator 384"/>
+   </Universe>
    <Universe Name="Universe 4" ID="3">
     <Input Plugin="MIDI" Name="input" UID="36864" Line="1" Profile="Akai APC Mini mk2">
      <PluginParameters initmessage="APC mini mk2 Ableton mode 2"/>
@@ -789,7 +791,8 @@
     <Disabled>False</Disabled>
     <Slider Caption="PARS" ID="32" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="16" Y="32" Width="88" Height="368"/>
-     <Input ID="0" Universe="3" Channel="48"/>
+      <Input ID="0" Universe="3" Channel="48"/>
+      <Input ID="2" Universe="2" Channel="0"/>
      <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="0">0</Channel>
@@ -805,7 +808,8 @@
     </Slider>
     <Slider Caption="MOVERS" ID="33" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="124" Y="32" Width="88" Height="368"/>
-     <Input ID="0" Universe="3" Channel="49"/>
+      <Input ID="0" Universe="3" Channel="49"/>
+      <Input ID="2" Universe="2" Channel="1"/>
      <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="6">7</Channel>
@@ -819,7 +823,8 @@
     </Slider>
     <Slider Caption="WASHERS" ID="34" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="232" Y="32" Width="88" Height="368"/>
-     <Input ID="0" Universe="3" Channel="50"/>
+      <Input ID="0" Universe="3" Channel="50"/>
+      <Input ID="2" Universe="2" Channel="2"/>
      <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="10">0</Channel>
@@ -831,7 +836,8 @@
     </Slider>
     <Slider Caption="BLINDER" ID="35" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="340" Y="32" Width="88" Height="368"/>
-     <Input ID="0" Universe="3" Channel="51"/>
+      <Input ID="0" Universe="3" Channel="51"/>
+      <Input ID="2" Universe="2" Channel="3"/>
      <SliderMode ValueDisplayStyle="Percentage" Monitor="true">Level</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="12">0</Channel>
@@ -842,7 +848,8 @@
     </Slider>
     <Slider Caption="MASTER" ID="36" WidgetStyle="Slider" InvertedAppearance="false" CatchValues="true">
      <WindowState Visible="True" X="448" Y="32" Width="88" Height="368"/>
-     <Input ID="0" Universe="3" Channel="56"/>
+      <Input ID="0" Universe="3" Channel="56"/>
+      <Input ID="1" Universe="2" Channel="4"/>
      <SliderMode ValueDisplayStyle="Percentage">GrandMaster</SliderMode>
      <Level LowLimit="0" HighLimit="255" Value="255"/>
     </Slider>
@@ -858,25 +865,29 @@
      <WindowState Visible="True" X="8" Y="24" Width="168" Height="104"/>
      <Function ID="20"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="176" LowerValue="1" UpperValue="42" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="176" LowerValue="1" UpperValue="42" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="140"/>
     </Button>
     <Button Caption="SWEEP" ID="12">
      <WindowState Visible="True" X="192" Y="24" Width="168" Height="104"/>
      <Function ID="21"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="177" LowerValue="1" UpperValue="58" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="177" LowerValue="1" UpperValue="58" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="141"/>
     </Button>
     <Button Caption="PARTY CIRCLE" ID="13">
      <WindowState Visible="True" X="376" Y="24" Width="168" Height="104"/>
      <Function ID="22"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="178" LowerValue="1" UpperValue="34" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="178" LowerValue="1" UpperValue="34" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="142"/>
     </Button>
     <Button Caption="CROWD SWEEP" ID="31">
      <WindowState Visible="True" X="560" Y="24" Width="168" Height="104"/>
      <Function ID="44"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="179" LowerValue="1" UpperValue="50" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="179" LowerValue="1" UpperValue="50" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="143"/>
     </Button>
    </SoloFrame>
    <Frame Caption="FX" ID="14">
@@ -890,30 +901,37 @@
      <WindowState Visible="True" X="18" Y="56" Width="168" Height="104"/>
      <Function ID="34"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="168" LowerValue="1" UpperValue="104" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="168" LowerValue="1" UpperValue="104" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="144"/>
     </Button>
     <Button Caption="STROBE" ID="16">
      <WindowState Visible="True" X="188" Y="56" Width="168" Height="104"/>
      <Function ID="37"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="169" LowerValue="1" UpperValue="120" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="169" LowerValue="1" UpperValue="120" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="145"/>
     </Button>
     <Button Caption="UV WASH" ID="17">
      <WindowState Visible="True" X="376" Y="56" Width="168" Height="104"/>
      <Function ID="38"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="170" LowerValue="1" UpperValue="98" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="170" LowerValue="1" UpperValue="98" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="146"/>
     </Button>
     <SpeedDial Caption="SPEED" ID="18">
      <WindowState Visible="True" X="564" Y="56" Width="319" Height="301"/>
      <Visibility>644</Visibility>
      <Time>700</Time>
-     <AbsoluteValue Minimum="0" Maximum="10000">
-      <Input ID="0" Universe="3" Channel="52"/>
-     </AbsoluteValue>
+      <AbsoluteValue Minimum="0" Maximum="10000">
+       <Input ID="0" Universe="3" Channel="52"/>
+       <Input ID="2" Universe="2" Channel="5"/>
+      </AbsoluteValue>
      <Function FadeIn="0" FadeOut="0" Duration="6">37</Function>
      <Function FadeIn="0" FadeOut="0" Duration="6">44</Function>
-     <Input ID="1" Universe="3" Channel="171" LowerValue="1" UpperValue="26" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+     <Tap>
+      <Input ID="1" Universe="3" Channel="171" LowerValue="1" UpperValue="26" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="147"/>
+     </Tap>
     </SpeedDial>
    </Frame>
    <SoloFrame Caption="POSITION" ID="19">
@@ -927,25 +945,29 @@
      <WindowState Visible="True" X="8" Y="24" Width="168" Height="104"/>
      <Function ID="40"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="160" LowerValue="1" UpperValue="24" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="160" LowerValue="1" UpperValue="24" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="148"/>
     </Button>
     <Button Caption="WIDE BAND" ID="21">
      <WindowState Visible="True" X="192" Y="24" Width="168" Height="104"/>
      <Function ID="41"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="161" LowerValue="1" UpperValue="26" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="161" LowerValue="1" UpperValue="26" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="149"/>
     </Button>
     <Button Caption="BACKLINE" ID="22">
      <WindowState Visible="True" X="376" Y="24" Width="168" Height="104"/>
      <Function ID="42"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="162" LowerValue="1" UpperValue="28" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="162" LowerValue="1" UpperValue="28" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="150"/>
     </Button>
     <Button Caption="CROWD" ID="23">
      <WindowState Visible="True" X="560" Y="24" Width="168" Height="104"/>
      <Function ID="43"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="163" LowerValue="1" UpperValue="30" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="163" LowerValue="1" UpperValue="30" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="151"/>
     </Button>
    </SoloFrame>
    <SoloFrame Caption="LOOKS" ID="1">
@@ -983,73 +1005,85 @@
      <WindowState Visible="True" X="8" Y="24" Width="176" Height="104"/>
      <Function ID="10"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="184" LowerValue="1" UpperValue="18" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="184" LowerValue="1" UpperValue="18" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="129"/>
     </Button>
     <Button Caption="CHANGEOVER" ID="3">
      <WindowState Visible="True" X="193" Y="24" Width="176" Height="104"/>
      <Function ID="11"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="185" LowerValue="1" UpperValue="82" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="185" LowerValue="1" UpperValue="82" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="130"/>
     </Button>
     <Button Caption="MC / HOST" ID="4">
      <WindowState Visible="True" X="379" Y="24" Width="176" Height="104"/>
      <Function ID="12"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="186" LowerValue="1" UpperValue="6" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="186" LowerValue="1" UpperValue="6" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="131"/>
     </Button>
     <Button Caption="COLOUR CHILL" ID="6">
      <WindowState Visible="True" X="750" Y="24" Width="176" Height="104"/>
      <Function ID="14"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="188" LowerValue="1" UpperValue="106" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="188" LowerValue="1" UpperValue="106" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="135"/>
     </Button>
     <Button Caption="ACOUSTIC" ID="5">
      <WindowState Visible="True" X="564" Y="24" Width="176" Height="104"/>
      <Function ID="13"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="187" LowerValue="1" UpperValue="16" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="187" LowerValue="1" UpperValue="16" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="134"/>
     </Button>
     <Button Caption="WHITE OUT" ID="8">
      <WindowState Visible="True" X="1121" Y="24" Width="176" Height="104"/>
      <Function ID="16"/>
      <Action Override="0" ForceLTP="0">Flash</Action>
-     <Input ID="0" Universe="3" Channel="190" LowerValue="1" UpperValue="6" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="190" LowerValue="1" UpperValue="6" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="139"/>
     </Button>
     <Button Caption="PARTY" ID="7">
      <WindowState Visible="True" X="936" Y="24" Width="176" Height="104"/>
      <Function ID="15"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="189" LowerValue="1" UpperValue="10" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="189" LowerValue="1" UpperValue="10" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="132"/>
     </Button>
     <Button Caption="ROCK" ID="24">
      <WindowState Visible="True" X="8" Y="136" Width="176" Height="104"/>
      <Function ID="45"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="152" LowerValue="1" UpperValue="8" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="152" LowerValue="1" UpperValue="8" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="133"/>
     </Button>
     <Button Caption="BLACKOUT" ID="9">
      <WindowState Visible="True" X="1307" Y="24" Width="176" Height="104"/>
      <Function ID="17"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="191" LowerValue="1" UpperValue="14" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="191" LowerValue="1" UpperValue="14" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="128"/>
     </Button>
     <Button Caption="PURPLE HAZE" ID="26">
      <WindowState Visible="True" X="379" Y="136" Width="176" Height="104"/>
      <Function ID="47"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="154" LowerValue="1" UpperValue="162" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="154" LowerValue="1" UpperValue="162" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="136"/>
     </Button>
     <Button Caption="OCEAN" ID="25">
      <WindowState Visible="True" X="193" Y="136" Width="176" Height="104"/>
      <Function ID="46"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="153" LowerValue="1" UpperValue="66" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="153" LowerValue="1" UpperValue="66" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="137"/>
     </Button>
     <Button Caption="SUNSET" ID="27">
      <WindowState Visible="True" X="564" Y="136" Width="176" Height="104"/>
      <Function ID="48"/>
      <Action>Toggle</Action>
-     <Input ID="0" Universe="3" Channel="155" LowerValue="1" UpperValue="168" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="0" Universe="3" Channel="155" LowerValue="1" UpperValue="168" LowerParams="6" UpperParams="6" MonitorParams="6"/>
+      <Input ID="1" Universe="2" Channel="138"/>
     </Button>
    </SoloFrame>
   </Frame>
