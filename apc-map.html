@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APC mini mk2 &rarr; QLC+ Map</title>
+<style>
+  :root {
+    --bg: #141518;
+    --desk: #1e2025;
+    --desk-edge: #2c2f36;
+    --text: #e8e9eb;
+    --dim: #8a8d94;
+    --levels: #3b82f6;
+    --movement: #a855f7;
+    --fx: #f97316;
+    --position: #22c55e;
+    --looks: #ef4444;
+    --jam: #eab308;
+    --unused: #3a3d44;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Roboto Condensed", "Segoe UI", system-ui, sans-serif;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  h1 { font-size: 1.6rem; letter-spacing: 0.05em; }
+  .sub { color: var(--dim); font-size: 0.9rem; margin-top: 4px; text-align: center; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    font-size: 0.85rem;
+  }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+  .desk {
+    background: var(--desk);
+    border: 2px solid var(--desk-edge);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    max-width: 900px;
+    width: 100%;
+  }
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--dim);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .grid-area { display: flex; gap: 12px; }
+  .pads {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    flex: 1;
+  }
+  .side-btns {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    gap: 8px;
+    width: 74px;
+  }
+
+  .pad {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    background: #26282e;
+    border: 1px solid #33363d;
+    border-top: 3px solid var(--c, var(--unused));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-align: center;
+    padding: 3px;
+  }
+  .pad .num { font-size: 0.6rem; color: var(--dim); letter-spacing: 0.05em; }
+  .pad .label { font-size: 0.68rem; font-weight: 600; line-height: 1.1; }
+  .pad .label:empty::before { content: "\2014"; color: var(--dim); font-weight: 400; }
+  .pad.used { background: #2a2d34; }
+  .pad.flash .label::after { content: " \26A1"; font-size: 0.6rem; }
+
+  .mini-btn {
+    border-radius: 6px;
+    background: #22242a;
+    border: 1px solid #2e3138;
+    color: var(--dim);
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2px;
+  }
+  .bottom-btns {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr) 74px;
+    gap: 8px;
+  }
+  .bottom-btns .mini-btn { height: 30px; }
+
+  .faders { display: grid; grid-template-columns: repeat(9, 1fr); gap: 10px; }
+  .fader-wrap {
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    background: #26282e;
+    border: 1px solid #33363d;
+    border-top: 3px solid var(--c, var(--unused));
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 74px;
+    justify-content: center;
+  }
+  .fader-wrap .num { font-size: 0.7rem; color: var(--dim); letter-spacing: 0.1em; }
+  .fader-wrap .label { font-size: 0.82rem; font-weight: 600; line-height: 1.15; }
+  .fader-wrap .label:empty::before { content: "\2014"; color: var(--dim); font-weight: 400; }
+  .fader-wrap.used { background: #2a2d34; }
+  .fader-track {
+    height: 34px;
+    width: 8px;
+    margin: 2px auto;
+    background: #101114;
+    border-radius: 4px;
+    position: relative;
+  }
+  .fader-cap {
+    position: absolute;
+    left: -6px;
+    width: 20px;
+    height: 10px;
+    border-radius: 3px;
+    background: var(--c, var(--unused));
+    bottom: 30%;
+  }
+
+  footer { color: var(--dim); font-size: 0.8rem; text-align: center; line-height: 1.6; max-width: 800px; }
+</style>
+</head>
+<body>
+
+<header style="text-align:center">
+  <h1>Akai APC mini mk2 &rarr; QLC+ Virtual Console</h1>
+  <div class="sub">Input universe 3 &middot; pads light up via QLC+ feedback &middot; based on january-jam.qxw</div>
+</header>
+
+<div class="legend">
+  <span><i class="dot" style="background:var(--levels)"></i>LEVELS</span>
+  <span><i class="dot" style="background:var(--movement)"></i>MOVEMENT</span>
+  <span><i class="dot" style="background:var(--fx)"></i>FX</span>
+  <span><i class="dot" style="background:var(--position)"></i>POSITION</span>
+  <span><i class="dot" style="background:var(--looks)"></i>LOOKS</span>
+  <span><i class="dot" style="background:var(--jam)"></i>JAM</span>
+  <span><i class="dot" style="background:var(--unused)"></i>Unmapped</span>
+</div>
+
+<div class="desk">
+
+  <section>
+    <div class="section-label">Pad grid (top row first)</div>
+    <div class="grid-area">
+      <div class="pads">
+        <div class="pad used" style="--c:var(--looks)"><span class="num">1-1</span><span class="label">HOUSE</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">2-1</span><span class="label">CHANGE&shy;OVER</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">3-1</span><span class="label">MC / HOST</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">4-1</span><span class="label">ACOUSTIC</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">5-1</span><span class="label">COLOUR CHILL</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">6-1</span><span class="label">PARTY</span></div>
+        <div class="pad used flash" style="--c:var(--looks)"><span class="num">7-1</span><span class="label">WHITE OUT</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">8-1</span><span class="label">BLACKOUT</span></div>
+
+        <div class="pad used" style="--c:var(--movement)"><span class="num">1-2</span><span class="label">SLOW CIRCLE</span></div>
+        <div class="pad used" style="--c:var(--movement)"><span class="num">2-2</span><span class="label">SWEEP</span></div>
+        <div class="pad used" style="--c:var(--movement)"><span class="num">3-2</span><span class="label">PARTY CIRCLE</span></div>
+        <div class="pad used" style="--c:var(--movement)"><span class="num">4-2</span><span class="label">CROWD SWEEP</span></div>
+        <div class="pad"><span class="num">5-2</span><span class="label"></span></div>
+        <div class="pad"><span class="num">6-2</span><span class="label"></span></div>
+        <div class="pad"><span class="num">7-2</span><span class="label"></span></div>
+        <div class="pad"><span class="num">8-2</span><span class="label"></span></div>
+
+        <div class="pad used" style="--c:var(--fx)"><span class="num">1-3</span><span class="label">COLOUR CHASE</span></div>
+        <div class="pad used" style="--c:var(--fx)"><span class="num">2-3</span><span class="label">STROBE</span></div>
+        <div class="pad used" style="--c:var(--fx)"><span class="num">3-3</span><span class="label">UV WASH</span></div>
+        <div class="pad"><span class="num">4-3</span><span class="label"></span></div>
+        <div class="pad"><span class="num">5-3</span><span class="label"></span></div>
+        <div class="pad"><span class="num">6-3</span><span class="label"></span></div>
+        <div class="pad"><span class="num">7-3</span><span class="label"></span></div>
+        <div class="pad"><span class="num">8-3</span><span class="label"></span></div>
+
+        <div class="pad used" style="--c:var(--position)"><span class="num">1-4</span><span class="label">FRONT SPOT</span></div>
+        <div class="pad used" style="--c:var(--position)"><span class="num">2-4</span><span class="label">WIDE BAND</span></div>
+        <div class="pad used" style="--c:var(--position)"><span class="num">3-4</span><span class="label">BACKLINE</span></div>
+        <div class="pad used" style="--c:var(--position)"><span class="num">4-4</span><span class="label">CROWD</span></div>
+        <div class="pad"><span class="num">5-4</span><span class="label"></span></div>
+        <div class="pad"><span class="num">6-4</span><span class="label"></span></div>
+        <div class="pad"><span class="num">7-4</span><span class="label"></span></div>
+        <div class="pad"><span class="num">8-4</span><span class="label"></span></div>
+
+        <div class="pad used" style="--c:var(--looks)"><span class="num">1-5</span><span class="label">ROCK</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">2-5</span><span class="label">OCEAN</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">3-5</span><span class="label">PURPLE HAZE</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">4-5</span><span class="label">SUNSET</span></div>
+        <div class="pad used flash" style="--c:var(--looks)"><span class="num">5-5</span><span class="label">BLINDER</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">6-5</span><span class="label">ENCORE</span></div>
+        <div class="pad used" style="--c:var(--looks)"><span class="num">7-5</span><span class="label">WALKOUT</span></div>
+        <div class="pad used flash" style="--c:var(--looks)"><span class="num">8-5</span><span class="label">BLINDER STROBE</span></div>
+
+        <div class="pad used" style="--c:var(--jam)"><span class="num">1-6</span><span class="label">STRAW&shy;BERRY</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">2-6</span><span class="label">RASP&shy;BERRY</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">3-6</span><span class="label">GRAPE JELLY</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">4-6</span><span class="label">PLUM</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">5-6</span><span class="label">JAM MIX</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">6-6</span><span class="label">JAM CHASE</span></div>
+        <div class="pad used" style="--c:var(--jam)"><span class="num">7-6</span><span class="label">JAM SWAP</span></div>
+        <div class="pad"><span class="num">8-6</span><span class="label"></span></div>
+
+        <div class="pad"><span class="num">1-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">2-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">3-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">4-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">5-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">6-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">7-7</span><span class="label"></span></div>
+        <div class="pad"><span class="num">8-7</span><span class="label"></span></div>
+
+        <div class="pad used" style="--c:var(--levels)"><span class="num">1-8</span><span class="label">PARS RESET</span></div>
+        <div class="pad used" style="--c:var(--levels)"><span class="num">2-8</span><span class="label">MOVERS RESET</span></div>
+        <div class="pad used" style="--c:var(--levels)"><span class="num">3-8</span><span class="label">WASHERS RESET</span></div>
+        <div class="pad used" style="--c:var(--levels)"><span class="num">4-8</span><span class="label">BLINDER RESET</span></div>
+        <div class="pad"><span class="num">5-8</span><span class="label"></span></div>
+        <div class="pad"><span class="num">6-8</span><span class="label"></span></div>
+        <div class="pad"><span class="num">7-8</span><span class="label"></span></div>
+        <div class="pad"><span class="num">8-8</span><span class="label"></span></div>
+      </div>
+      <div class="side-btns">
+        <div class="mini-btn">Clip stop</div>
+        <div class="mini-btn">Solo</div>
+        <div class="mini-btn">Mute</div>
+        <div class="mini-btn">Rec arm</div>
+        <div class="mini-btn">Select</div>
+        <div class="mini-btn">Drum</div>
+        <div class="mini-btn">Note</div>
+        <div class="mini-btn">Stop all</div>
+      </div>
+    </div>
+    <div class="bottom-btns" style="margin-top:8px">
+      <div class="mini-btn" style="color:var(--text);border-top:3px solid var(--fx)">Volume &middot; SPEED TAP</div>
+      <div class="mini-btn">Pan</div>
+      <div class="mini-btn">Send</div>
+      <div class="mini-btn">Device</div>
+      <div class="mini-btn">Up</div>
+      <div class="mini-btn">Down</div>
+      <div class="mini-btn">Left</div>
+      <div class="mini-btn">Right</div>
+      <div class="mini-btn">Shift</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Faders (1&ndash;8 track &middot; 9 = master)</div>
+    <div class="faders">
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 1</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">PARS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 2</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">MOVERS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 3</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">WASHERS</span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 4</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">BLINDER</span></div>
+      <div class="fader-wrap used" style="--c:var(--fx)"><span class="num">FADER 5</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">SPEED</span></div>
+      <div class="fader-wrap"><span class="num">FADER 6</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label"></span></div>
+      <div class="fader-wrap"><span class="num">FADER 7</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label"></span></div>
+      <div class="fader-wrap"><span class="num">FADER 8</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label"></span></div>
+      <div class="fader-wrap used" style="--c:var(--levels)"><span class="num">FADER 9</span><div class="fader-track"><div class="fader-cap"></div></div><span class="label">MASTER</span></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &#9889; = momentary (flash) button; everything else toggles.<br>
+  Bottom pad row resets the matching fader to its default value.<br>
+  SPEED TAP (Volume button, bottom row) sets chase/strobe tempo &mdash; tap in time; SPEED fader sets it absolutely (0&ndash;10 s).<br>
+  Side scene buttons, other track buttons, Shift and faders 6&ndash;8 are unmapped.<br>
+  The DMX Operator 384 drives the same widgets in parallel (see desk-map.html).
+</footer>
+
+</body>
+</html>
