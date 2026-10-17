@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "version": "1.0.1b96",
+    "version": "1.0.1b97",
     "versionNumber": 65537
   },
   "projectSettings": {
@@ -118,7 +118,7 @@
                   "type": 0,
                   "width": 574,
                   "height": 267,
-                  "currentContent": "Fixtures",
+                  "currentContent": "Fixture Grid",
                   "tabs": [
                     {
                       "name": "Fixture Grid"
@@ -138,7 +138,7 @@
                   "type": 0,
                   "width": 574,
                   "height": 292,
-                  "currentContent": "Preset Grid",
+                  "currentContent": "Presets",
                   "tabs": [
                     {
                       "name": "Preset Grid"
@@ -5467,7 +5467,7 @@
             "controlAddress": "/id"
           },
           {
-            "value": "Par 1",
+            "value": "Par 2",
             "controlAddress": "/name"
           },
           {
@@ -5475,7 +5475,7 @@
             "controlAddress": "/fixtureType"
           }
         ],
-        "niceName": "5 - Par 1",
+        "niceName": "5 - Par 2",
         "editorIsCollapsed": true,
         "containers": {
           "patch": {
@@ -5511,7 +5511,7 @@
             "controlAddress": "/fixtureType"
           }
         ],
-        "niceName": "6 - Par 2",
+        "niceName": "6 - Par 3",
         "editorIsCollapsed": true,
         "containers": {
           "patch": {
@@ -5611,7 +5611,7 @@
             "controlAddress": "/id"
           },
           {
-            "value": "Par 5",
+            "value": "Par Right 5",
             "controlAddress": "/name"
           },
           {
@@ -5619,7 +5619,7 @@
             "controlAddress": "/fixtureType"
           }
         ],
-        "niceName": "9 - Par 5",
+        "niceName": "9 - Par Right 5",
         "editorIsCollapsed": true,
         "containers": {
           "patch": {
@@ -5647,7 +5647,7 @@
             "controlAddress": "/id"
           },
           {
-            "value": "Par 6",
+            "value": "Par Right 6",
             "controlAddress": "/name"
           },
           {
@@ -5655,7 +5655,7 @@
             "controlAddress": "/fixtureType"
           }
         ],
-        "niceName": "10 - Par 6",
+        "niceName": "10 - Par Right 6",
         "editorIsCollapsed": true,
         "containers": {
           "patch": {
@@ -5700,6 +5700,10 @@
           {
             "value": "",
             "controlAddress": "/nextCue"
+          },
+          {
+            "value": 1.0,
+            "controlAddress": "/htpLevel"
           },
           {
             "value": "",
@@ -6370,7 +6374,7 @@
               {
                 "parameters": [
                   {
-                    "value": "2026-08-19 17:37:26",
+                    "value": "2026-08-19 17:59:34",
                     "controlAddress": "/lastTriggered"
                   },
                   {
@@ -6881,6 +6885,10 @@
           {
             "value": "",
             "controlAddress": "/nextCue"
+          },
+          {
+            "value": 0.9166666865348816,
+            "controlAddress": "/htpLevel"
           },
           {
             "value": "",
@@ -7551,7 +7559,7 @@
               {
                 "parameters": [
                   {
-                    "value": "2026-08-19 17:32:28",
+                    "value": "2026-08-19 18:00:16",
                     "controlAddress": "/lastTriggered"
                   },
                   {
@@ -11464,7 +11472,7 @@
   },
   "virtualFaderCol": {
     "containers": {
-      "virtualFaderColP0C2": {
+      "mhFader": {
         "parameters": [
           {
             "value": 2,
@@ -11477,7 +11485,7 @@
             "controlAddress": "/targetID"
           }
         ],
-        "niceName": "VirtualFaderCol p0 c2",
+        "niceName": "MH Fader",
         "containers": {
           "rotaries": {
             "viewOffset": [
@@ -11494,7 +11502,27 @@
             "viewZoom": 1.0
           },
           "virtualFaderSlider": {
+            "parameters": [
+              {
+                "value": "Same as column",
+                "controlAddress": "/targetType"
+              },
+              {
+                "value": 2,
+                "hexMode": false,
+                "controlAddress": "/targetID"
+              },
+              {
+                "value": "MH",
+                "controlAddress": "/customText"
+              },
+              {
+                "value": "HTP Level",
+                "controlAddress": "/cuelistAction"
+              }
+            ],
             "niceName": "VirtualFaderSlider",
+            "editorIsCollapsed": true,
             "containers": {
               "genericActions": {
                 "hideInEditor": true,
@@ -11508,6 +11536,33 @@
             "type": "VirtualFaderSlider"
           },
           "belowButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "Cuelist",
+                    "controlAddress": "/targetType"
+                  },
+                  {
+                    "value": 2,
+                    "hexMode": false,
+                    "controlAddress": "/targetID"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0
@@ -11517,7 +11572,7 @@
         },
         "type": "VirtualFaderCol"
       },
-      "virtualFaderColP0C1": {
+      "parFader": {
         "parameters": [
           {
             "value": 1,
@@ -11525,7 +11580,8 @@
             "controlAddress": "/targetID"
           }
         ],
-        "niceName": "VirtualFaderCol p0 c1",
+        "niceName": "Par Fader",
+        "editorIsCollapsed": true,
         "containers": {
           "rotaries": {
             "viewOffset": [
@@ -11535,6 +11591,29 @@
             "viewZoom": 1.0
           },
           "aboveButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "disabled",
+                    "controlAddress": "/targetType"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "editorIsCollapsed": true,
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0
@@ -11542,6 +11621,16 @@
             "viewZoom": 1.0
           },
           "virtualFaderSlider": {
+            "parameters": [
+              {
+                "value": "Same as column",
+                "controlAddress": "/targetType"
+              },
+              {
+                "value": "Par",
+                "controlAddress": "/customText"
+              }
+            ],
             "niceName": "VirtualFaderSlider",
             "containers": {
               "genericActions": {
@@ -11556,6 +11645,33 @@
             "type": "VirtualFaderSlider"
           },
           "belowButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "Cuelist",
+                    "controlAddress": "/targetType"
+                  },
+                  {
+                    "value": 1,
+                    "hexMode": false,
+                    "controlAddress": "/targetID"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0
@@ -11580,7 +11696,7 @@
             "controlAddress": "/targetID"
           }
         ],
-        "niceName": "VirtualFaderCol p0 c2",
+        "niceName": "MH Fader",
         "containers": {
           "rotaries": {
             "viewOffset": [
@@ -11597,7 +11713,27 @@
             "viewZoom": 1.0
           },
           "virtualFaderSlider": {
+            "parameters": [
+              {
+                "value": "Same as column",
+                "controlAddress": "/targetType"
+              },
+              {
+                "value": 2,
+                "hexMode": false,
+                "controlAddress": "/targetID"
+              },
+              {
+                "value": "MH",
+                "controlAddress": "/customText"
+              },
+              {
+                "value": "HTP Level",
+                "controlAddress": "/cuelistAction"
+              }
+            ],
             "niceName": "VirtualFaderSlider",
+            "editorIsCollapsed": true,
             "containers": {
               "genericActions": {
                 "hideInEditor": true,
@@ -11611,6 +11747,33 @@
             "type": "VirtualFaderSlider"
           },
           "belowButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "Cuelist",
+                    "controlAddress": "/targetType"
+                  },
+                  {
+                    "value": 2,
+                    "hexMode": false,
+                    "controlAddress": "/targetID"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0
@@ -11628,7 +11791,8 @@
             "controlAddress": "/targetID"
           }
         ],
-        "niceName": "VirtualFaderCol p0 c1",
+        "niceName": "Par Fader",
+        "editorIsCollapsed": true,
         "containers": {
           "rotaries": {
             "viewOffset": [
@@ -11638,6 +11802,29 @@
             "viewZoom": 1.0
           },
           "aboveButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "disabled",
+                    "controlAddress": "/targetType"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "editorIsCollapsed": true,
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0
@@ -11645,6 +11832,16 @@
             "viewZoom": 1.0
           },
           "virtualFaderSlider": {
+            "parameters": [
+              {
+                "value": "Same as column",
+                "controlAddress": "/targetType"
+              },
+              {
+                "value": "Par",
+                "controlAddress": "/customText"
+              }
+            ],
             "niceName": "VirtualFaderSlider",
             "containers": {
               "genericActions": {
@@ -11659,6 +11856,33 @@
             "type": "VirtualFaderSlider"
           },
           "belowButtons": {
+            "items": [
+              {
+                "parameters": [
+                  {
+                    "value": "Cuelist",
+                    "controlAddress": "/targetType"
+                  },
+                  {
+                    "value": 1,
+                    "hexMode": false,
+                    "controlAddress": "/targetID"
+                  }
+                ],
+                "niceName": "VirtualFaderButton",
+                "containers": {
+                  "genericActions": {
+                    "hideInEditor": true,
+                    "viewOffset": [
+                      0,
+                      0
+                    ],
+                    "viewZoom": 1.0
+                  }
+                },
+                "type": "VirtualFaderButton"
+              }
+            ],
             "viewOffset": [
               0,
               0

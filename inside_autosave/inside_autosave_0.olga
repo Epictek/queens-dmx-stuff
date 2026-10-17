@@ -1,6 +1,6 @@
 {
   "metaData": {
-    "version": "1.0.1b96",
+    "version": "1.0.1b97",
     "versionNumber": 65537
   },
   "projectSettings": {
@@ -118,7 +118,7 @@
                   "type": 0,
                   "width": 574,
                   "height": 267,
-                  "currentContent": "Group Grid",
+                  "currentContent": "Fixture Grid",
                   "tabs": [
                     {
                       "name": "Fixture Grid"
@@ -138,7 +138,7 @@
                   "type": 0,
                   "width": 574,
                   "height": 292,
-                  "currentContent": "Preset Grid",
+                  "currentContent": "Presets",
                   "tabs": [
                     {
                       "name": "Preset Grid"
@@ -5702,7 +5702,7 @@
             "controlAddress": "/nextCue"
           },
           {
-            "value": 0.4537037014961243,
+            "value": 1.0,
             "controlAddress": "/htpLevel"
           },
           {
